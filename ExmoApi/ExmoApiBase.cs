@@ -5,18 +5,39 @@ using System.Security.Authentication;
 
 namespace ExmoApi
 {
+    /// <summary>
+    /// Base ExmoApi class
+    /// </summary>
     public abstract class ExmoApiBase
     {
-        public static string ExmoComApiAddress = "https://api.exmo.com/";
-        public static string ExmoMeApiAddress = "https://api.exmo.me/";
+        /// <summary>
+        /// Link to https://api.exmo.com/
+        /// </summary>
+        public static string ExmoComApiAddress { get; private set; } = "https://api.exmo.com/";
+        /// <summary>
+        /// Link to https://api.exmo.me/
+        /// </summary>
+        public static string ExmoMeApiAddress { get; private set; } = "https://api.exmo.me/";
 
+        /// <summary>
+        /// ExmoAPI base url
+        /// </summary>
         public Uri ApiAddress { get; private set; }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="apiAddress">ExmoAPI base url</param>
         public ExmoApiBase(string apiAddress)
         {
             ApiAddress = new Uri(apiAddress);
         }
         
+        /// <summary>
+        /// Executes method by name
+        /// </summary>
+        /// <param name="methodName">Method name which will be called</param>
+        /// <param name="content">Contains method parameters which will be sent to server</param>
+        /// <returns></returns>
         protected async Task<string> NativeMethodCallAsync(string methodName, FormUrlEncodedContent content = null)
         {
             string response;
