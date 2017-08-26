@@ -6,7 +6,7 @@ using ExmoApi.Extensions;
 
 namespace ExmoApi
 {
-    public class ExmoWalletApi : ExmoApiBase
+    public class ExmoWalletApi : ExmoApiBase, IEquatable<ExmoWalletApi>
     {
         private ExmoAuthenticatedAPI apiSource;
 
@@ -28,5 +28,7 @@ namespace ExmoApi
             });
             return JsonConvert.DeserializeObject(await this.NativeMethodCallAsync("wallet_history", content));
         }
+
+        public bool Equals(ExmoWalletApi other) => apiSource.Equals(other.apiSource);
     }
 }
