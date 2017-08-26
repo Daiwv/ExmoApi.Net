@@ -1,5 +1,5 @@
-# ExmoApi
-.Net api for Exmo.com/Exmo.me
+# ExmoApi.Net
+http://api.exmo.me(http://api.exmo.com) api .net implementation
 
  Using Exmo Public API:
 ----------------------
