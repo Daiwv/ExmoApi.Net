@@ -1,9 +1,15 @@
 # ExmoApi.Net
-http://api.exmo.me (http://api.exmo.com) api .net implementation
+https://exmo.me/en/api (https://exmo.com/en/api) .NET implementation
 
+## NuGet
+[ExmoApi at NuGet](https://www.nuget.org/packages/ExmoApi)
+
+    Install-Package ExmoApi
+    
+    
  Using Exmo Public API:
 ----------------------
-    var publicApi = new ExmoPublicApi(ExmoApiBase.ExmoMeApiAddress);
+    var publicApi = new ExmoPublicApi();
     var currencies = await publicApi.CurrencyAsync();
 
 Using Exmo Authenticated API:
@@ -15,3 +21,7 @@ Using Exmo Wallet API:
 ----------------------
     var walletApi = new ExmoWalletApi(key, secret);
     var history = walletApi.WalletHistoryAsync(DateTime.Today);
+
+If https://api.exmo.com/ not working:
+------------------------------------
+    var publicApi = new ExmoPublicApi(ExmoApiBase.ExmoMeApiAddress); //or use another exmo mirror
