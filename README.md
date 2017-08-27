@@ -1,6 +1,12 @@
 # ExmoApi.Net
 http://api.exmo.me (http://api.exmo.com) api .net implementation
 
+## NuGet
+[ExmoApi at NuGet](https://www.nuget.org/packages/ExmoApi)
+
+    Install-Package ExmoApi
+    
+    
  Using Exmo Public API:
 ----------------------
     var publicApi = new ExmoPublicApi(ExmoApiBase.ExmoMeApiAddress);
