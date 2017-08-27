@@ -1,5 +1,5 @@
 # ExmoApi.Net
-http://api.exmo.me (http://api.exmo.com) api .net implementation
+https://exmo.me/en/api (https://exmo.com/en/api) .NET implementation
 
 ## NuGet
 [ExmoApi at NuGet](https://www.nuget.org/packages/ExmoApi)
