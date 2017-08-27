@@ -22,6 +22,6 @@ Using Exmo Wallet API:
     var walletApi = new ExmoWalletApi(key, secret);
     var history = walletApi.WalletHistoryAsync(DateTime.Today);
 
-If http://api.exmo.com/ not working:
+If https://api.exmo.com/ not working:
 ------------------------------------
     var publicApi = new ExmoPublicApi(ExmoApiBase.ExmoMeApiAddress); //or use another exmo mirror
