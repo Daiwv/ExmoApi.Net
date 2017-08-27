@@ -180,11 +180,11 @@ namespace ExmoApi
         /// </summary>
         /// <param name="taskId">Withdrawal task identifier</param>
         /// <returns></returns>
-        public async Task<dynamic> WithdrawGetTxId(long taskId)
+        public async Task<dynamic> WithdrawGetTxIdAsync(long taskId)
         {
             var content = GenerateAuthenticatedContent(new KeyValuePair<string, string>[]
             {
-                new KeyValuePair<string, string>("taskId", taskId.ToString())
+                new KeyValuePair<string, string>("task_id", taskId.ToString())
             });
             return JsonConvert.DeserializeObject(await this.NativeMethodCallAsync("withdraw_get_txid", content));
         }

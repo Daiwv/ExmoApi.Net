@@ -5,9 +5,27 @@
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Version>1.1.0</Version>
+    <Authors>venvw</Authors>
+    <Company>venvw</Company>
+    <Description>ExmoApi is .NET implementation of Exmo API (api.exmo.com or api.exmo.me)</Description>
+    <PackageLicenseUrl>https://github.com/venvw/ExmoApi.Net</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/venvw/ExmoApi.Net</PackageProjectUrl>
+    <PackageIconUrl>https://exmo.me/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://github.com/venvw/ExmoApi.Net</RepositoryUrl>
+    <PackageTags>Api Exmo.me Exmo.com .NET</PackageTags>
+    <PackageReleaseNotes>First NUGET release
+Added tooltips</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\ExmoApi.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
