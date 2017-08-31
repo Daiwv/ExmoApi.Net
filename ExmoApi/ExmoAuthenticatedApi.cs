@@ -19,13 +19,13 @@ namespace ExmoApi
         /// Public key that can be found in user’s profile settings. 
         /// Example: K-7cc97c89aed2a2fd9ed7792d48d63f65800c447b
         /// </summary>
-        public string Key { get; private set; }
+        public string Key { get; set; }
 
         /// <summary>
         /// Private key that can be found in user’s profile settings. 
         /// Example: S-7cc97c89aed2a2fd9ed7792d48d63f65800c447b
         /// </summary>
-        public string Secret { get; private set; }
+        public string Secret { get; set; }
 
         /// <summary>
         /// Initializes Exmo Authenticated API provider
