@@ -11,7 +11,10 @@ namespace ExmoApi
     /// </summary>
     public class ExmoWalletApi : ExmoApiBase, IEquatable<ExmoWalletApi>
     {
-        private ExmoAuthenticatedApi apiSource;
+        /// <summary>
+        /// Api source for wallet Api
+        /// </summary>
+        public ExmoAuthenticatedApi AuthenticatedApi { get; private set; }
 
         /// <summary>
         /// Initializes Exmo Wallet API provider
@@ -21,7 +24,7 @@ namespace ExmoApi
         /// <param name="apiAddress">ExmoAPI base url</param>
         public ExmoWalletApi(string key, string secret, string apiAddress = "https://api.exmo.com/") : base(apiAddress)
         {
-            apiSource = new ExmoAuthenticatedApi(key, secret, apiAddress);
+            AuthenticatedApi = new ExmoAuthenticatedApi(key, secret, apiAddress);
         }
 
         /// <summary>
@@ -30,7 +33,7 @@ namespace ExmoApi
         /// <param name="authenticatedAPI">This provider will be used</param>
         public ExmoWalletApi(ExmoAuthenticatedApi authenticatedAPI) : base(authenticatedAPI.ApiAddress.ToString())
         {
-            apiSource = authenticatedAPI;
+            AuthenticatedApi = authenticatedAPI;
         }
 
         /// <summary>
@@ -40,13 +43,13 @@ namespace ExmoApi
         /// <returns></returns>
         public async Task<dynamic> WalletHistoryAsync(DateTime date)
         {
-            var content = apiSource.GenerateAuthenticatedContent(new KeyValuePair<string, string>[]
+            var content = AuthenticatedApi.GenerateAuthenticatedContent(new KeyValuePair<string, string>[]
             {
                 new KeyValuePair<string, string>("date", date.ToUnixTimestamp().ToString())
             });
             return JsonConvert.DeserializeObject(await this.NativeMethodCallAsync("wallet_history", content));
         }
 
-        public bool Equals(ExmoWalletApi other) => apiSource.Equals(other.apiSource);
+        public bool Equals(ExmoWalletApi other) => AuthenticatedApi.Equals(other.AuthenticatedApi);
     }
 }

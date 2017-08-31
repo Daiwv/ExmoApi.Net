@@ -7,7 +7,7 @@
     <StartupObject />
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
     <Authors>venvw</Authors>
     <Company>venvw</Company>
     <Description>ExmoApi is .NET implementation of Exmo API (api.exmo.com or api.exmo.me)</Description>
@@ -16,10 +16,10 @@
     <PackageIconUrl>https://exmo.me/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://github.com/venvw/ExmoApi.Net</RepositoryUrl>
     <PackageTags>Api Exmo.me Exmo.com .NET</PackageTags>
-    <PackageReleaseNotes>Bugfix 2</PackageReleaseNotes>
+    <PackageReleaseNotes>Bugfix 3</PackageReleaseNotes>
     <NeutralLanguage></NeutralLanguage>
-    <AssemblyVersion>1.2.1.0</AssemblyVersion>
-    <FileVersion>1.2.1.0</FileVersion>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+    <FileVersion>1.2.2.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
