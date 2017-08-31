@@ -22,7 +22,7 @@ namespace ExmoApi
         /// <summary>
         /// ExmoAPI base url
         /// </summary>
-        public Uri ApiAddress { get; private set; }
+        public Uri ApiAddress { get; set; }
 
         /// <summary>
         /// </summary>
