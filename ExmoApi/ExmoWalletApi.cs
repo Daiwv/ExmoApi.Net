@@ -11,7 +11,7 @@ namespace ExmoApi
     /// </summary>
     public class ExmoWalletApi : ExmoApiBase, IEquatable<ExmoWalletApi>
     {
-        private ExmoAuthenticatedAPI apiSource;
+        private ExmoAuthenticatedApi apiSource;
 
         /// <summary>
         /// Initializes Exmo Wallet API provider
@@ -21,14 +21,14 @@ namespace ExmoApi
         /// <param name="apiAddress">ExmoAPI base url</param>
         public ExmoWalletApi(string key, string secret, string apiAddress = "https://api.exmo.com/") : base(apiAddress)
         {
-            apiSource = new ExmoAuthenticatedAPI(key, secret, apiAddress);
+            apiSource = new ExmoAuthenticatedApi(key, secret, apiAddress);
         }
 
         /// <summary>
         /// Initializes Exmo Wallet API provider
         /// </summary>
         /// <param name="authenticatedAPI">This provider will be used</param>
-        public ExmoWalletApi(ExmoAuthenticatedAPI authenticatedAPI) : base(authenticatedAPI.ApiAddress.ToString())
+        public ExmoWalletApi(ExmoAuthenticatedApi authenticatedAPI) : base(authenticatedAPI.ApiAddress.ToString())
         {
             apiSource = authenticatedAPI;
         }
