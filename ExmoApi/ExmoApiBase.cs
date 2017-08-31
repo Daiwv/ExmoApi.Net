@@ -43,13 +43,14 @@ namespace ExmoApi
             string response;
             using (var handler = new HttpClientHandler())
             {
-                handler.SslProtocols = SslProtocols.Tls12 | SslProtocols.Tls11 | SslProtocols.Tls;
+                handler.ClientCertificateOptions = ClientCertificateOption.Automatic;
                 handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true;
                 using (var http = new HttpClient(handler))
                 {
                     var url = $"{ApiAddress}v1/{methodName}";
-                    response = await (await http.PostAsync(url, content))
-                        .Content.ReadAsStringAsync();
+
+                    var httpResponse = await http.PostAsync(url, content);
+                    response = await httpResponse.Content.ReadAsStringAsync();
                 }
             }
 
