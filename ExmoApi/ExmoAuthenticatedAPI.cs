@@ -13,7 +13,7 @@ namespace ExmoApi
     /// <summary>
     /// Provides Exmo Authenticated API functionality
     /// </summary>
-    public class ExmoAuthenticatedAPI : ExmoApiBase, IEquatable<ExmoAuthenticatedAPI>
+    public class ExmoAuthenticatedApi : ExmoApiBase, IEquatable<ExmoAuthenticatedApi>
     {
         /// <summary>
         /// Public key that can be found in user’s profile settings. 
@@ -33,7 +33,7 @@ namespace ExmoApi
         /// <param name="key">Public key that can be found in user’s profile settings. Example: K-7cc97c89aed2a2fd9ed7792d48d63f65800c447b</param>
         /// <param name="secret">Private key that can be found in user’s profile settings. Example: S-7cc97c89aed2a2fd9ed7792d48d63f65800c447b</param>
         /// <param name="apiAddress">ExmoAPI base url</param>
-        public ExmoAuthenticatedAPI(string key, string secret, string apiAddress = "https://api.exmo.com/") : base(apiAddress)
+        public ExmoAuthenticatedApi(string key, string secret, string apiAddress = "https://api.exmo.com/") : base(apiAddress)
         {
             this.Key = key;
             this.Secret = secret;
@@ -235,6 +235,6 @@ namespace ExmoApi
             }
         }
 
-        public bool Equals(ExmoAuthenticatedAPI other) => Key.Equals(other.Key) && Secret.Equals(other.Secret);
+        public bool Equals(ExmoAuthenticatedApi other) => Key.Equals(other.Key) && Secret.Equals(other.Secret);
     }
 }
